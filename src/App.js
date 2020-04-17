@@ -11,6 +11,7 @@ import Header from "./components/header"
 import HomePage from "./pages/homepage"
 import ShopPage from "./pages/shop-page"
 import Authentication from "./pages/authentication"
+import Checkout from "./pages/checkout"
 
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils"
 
@@ -47,6 +48,7 @@ class App extends Component {
                 <Switch>
                     <Route exact path="/" component={HomePage} />
                     <Route path="/shop" component={ShopPage} />
+                    <Route exact path="/checkout" component={Checkout} />
                     <Route exact path="/signin" render={() => currentUser ? <Redirect to='/' /> : <Authentication /> } />
                 </Switch>
             </div>
